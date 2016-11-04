@@ -1,7 +1,13 @@
+/**
+ * @file ArduboyTones.cpp
+ * \brief An Arduino library for playing tones and tone sequences, 
+ * intended for the Arduboy game system.
+ */
+
 /*****************************************************************************
   ArduboyTones
 
-An Arduino library to play tone sequences.
+An Arduino library to play tones and tone sequences.
 
 Specifically written for use by the Arduboy miniature game system
 https://www.arduboy.com/
@@ -148,11 +154,13 @@ void ArduboyTones::volumeMode(uint8_t mode)
 #endif
 }
 
-bool ArduboyTones::playing() {
+bool ArduboyTones::playing()
+{
   return tonesPlaying;
 }
 
-void ArduboyTones::nextTone() {
+void ArduboyTones::nextTone()
+{
   uint16_t freq;
   uint16_t dur;
   long toggleCount;
@@ -245,7 +253,8 @@ void ArduboyTones::nextTone() {
   bitWrite(TIMSK3, OCIE3A, 1); // enable the output compare match interrupt
 }
 
-uint16_t ArduboyTones::getNext() {
+uint16_t ArduboyTones::getNext()
+{
   if (inProgmem) {
     return pgm_read_word(tonesIndex++);
   }
