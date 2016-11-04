@@ -22,17 +22,16 @@ Note that even with all these features, ArduboyTones will use significantly less
 
 ## Installation
 
-At the moment, probably the easiest way to install the ArduboyTones library is to use the *Add .ZIP Library...* feature of the Arduino IDE. A properly formatted *.zip* file containing the latest stable release of the library can be obtained from
-https://mlxxxp.github.io/downloads/ArduboyTones/
+The library can be installed using the Arduino IDE library manager:
 
-- Download *ArduboyTones.zip* to a folder on your computer, such as *Downloads*. The folder you put it in doesn't matter as long as you know how to find the file later. Don't unzip the file.
-- In the Arduino IDE select from the menus: `Sketch > Include Library > Add .ZIP Library...`
-- Locate and select the *ArduboyTones.zip* file then click on the *OK* button. The library should now be installed and ready to use.
-- Once the library is installed, you can delete the *ArduboyTones.zip* file, if desired.
+- In the Arduino IDE select from the menus: `Sketch > Include Library > Manage Libraries...`
+- In the Library Manager *Filter your search...* field enter *arduboytones*.
+- Click somewhere within the ArduboyTones entry.
+- Click on the *Install* button.
 
 For more library installation information see
 
-[Installing Additional Arduino Libraries - Importing a .zip Library](https://www.arduino.cc/en/Guide/Libraries#toc4)
+[Installing Additional Arduino Libraries - Using the Library Manager](https://www.arduino.cc/en/Guide/Libraries#toc3)
 
 ## Using the library
 
