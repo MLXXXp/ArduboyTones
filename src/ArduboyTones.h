@@ -15,7 +15,7 @@ but could work with other Arduino AVR boards that have 16 bit timer 3
 available, by changing the port and bit definintions for the pin(s)
 if necessary.
 
-Copyright (c) 2016 Scott Allen
+Copyright (c) 2017 Scott Allen
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -147,7 +147,7 @@ THE SOFTWARE.
 
 /** \brief
  * The ArduboyTones class for generating tones by specifying
- * frequecy/duration pairs.
+ * frequency/duration pairs.
  */
 class ArduboyTones
 {
@@ -167,7 +167,7 @@ class ArduboyTones
    *
    * \param freq The frequency of the tone, in hertz.
    * \param dur The duration to play the tone for, in 1024ths of a
-   * second (very close to miliseconds). A duration of 0, or if not provided,
+   * second (very close to milliseconds). A duration of 0, or if not provided,
    * means play forever, or until `noTone()` is called or a new tone or
    * sequence is started.
    */
@@ -178,7 +178,7 @@ class ArduboyTones
    *
    * \param freq1,freq2 The frequency of the tone in hertz.
    * \param dur1,dur2 The duration to play the tone for, in 1024ths of a
-   * second (very close to miliseconds).
+   * second (very close to milliseconds).
    */
   static void tone(uint16_t freq1, uint16_t dur1,
                    uint16_t freq2, uint16_t dur2);
@@ -188,7 +188,7 @@ class ArduboyTones
    *
    * \param freq1,freq2,freq3 The frequency of the tone, in hertz.
    * \param dur1,dur2,dur3 The duration to play the tone for, in 1024ths of a
-   * second (very close to miliseconds).
+   * second (very close to milliseconds).
    */
   static void tone(uint16_t freq1, uint16_t dur1,
                    uint16_t freq2, uint16_t dur2,

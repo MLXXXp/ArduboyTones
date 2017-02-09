@@ -15,7 +15,7 @@ but could work with other Arduino AVR boards that have 16 bit timer 3
 available, by changing the port and bit definintions for the pin(s)
 if necessary.
 
-Copyright (c) 2016 Scott Allen
+Copyright (c) 2017 Scott Allen
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -171,7 +171,7 @@ void ArduboyTones::nextTone()
 
   freq = getNext(); // get tone frequency
 
-  if (freq == TONES_END) { // if freq is actually and "end of sequence" marker
+  if (freq == TONES_END) { // if freq is actually an "end of sequence" marker
     noTone(); // stop playing
     return;
   }
@@ -184,7 +184,6 @@ void ArduboyTones::nextTone()
   }
 
 #ifdef TONES_VOLUME_CONTROL
-  bitClear(TONE_PIN_PORT, TONE_PIN); // set the pin low
   if (((freq & TONE_HIGH_VOLUME) || forceHighVol) && !forceNormVol) {
     toneHighVol = true;
   }
@@ -224,7 +223,13 @@ void ArduboyTones::nextTone()
 
 #ifdef TONES_VOLUME_CONTROL
   if (toneHighVol && !toneSilent) {
-    bitSet(TONE_PIN2_PORT, TONE_PIN2); // set pin 2 high to compliment pin 1
+    // set pin 2 to the compliment of pin 1
+    if (bitRead(TONE_PIN_PORT, TONE_PIN)) {
+      bitClear(TONE_PIN2_PORT, TONE_PIN2);
+    }
+    else {
+      bitSet(TONE_PIN2_PORT, TONE_PIN2);
+    }
   }
   else {
     bitClear(TONE_PIN2_PORT, TONE_PIN2); // set pin 2 low for normal volume
