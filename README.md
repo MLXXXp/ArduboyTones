@@ -24,6 +24,10 @@ ArduboyTones has equivalents to Arduino [*tone()*](https://www.arduino.cc/en/Ref
 
 Note that even with all these features, ArduboyTones will use significantly less code space than using Arduino *tone()* functions.
 
+### Converting MIDI files
+
+A separate command line utility program, [midi2tones](https://github.com/MLXXXp/midi2tones), is available. It will convert [standard MIDI files](https://www.midi.org/articles/about-midi-part-4-midi-files) to ArduboyTones format when the `-o2` option is specified.
+
 ## Installation
 
 The library can be installed using the Arduino IDE library manager:
