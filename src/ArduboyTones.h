@@ -121,14 +121,24 @@ THE SOFTWARE.
 
 #ifndef AB_DEVKIT
   // Arduboy speaker pin 1 = Arduino pin 5 = ATmega32u4 PC6
+  #define TONE_PIN_PIN PINC
   #define TONE_PIN_PORT PORTC
   #define TONE_PIN_DDR DDRC
   #define TONE_PIN PORTC6
   #define TONE_PIN_MASK _BV(TONE_PIN)
+#ifndef AB_ALTERNATE_WIRING
   // Arduboy speaker pin 2 = Arduino pin 13 = ATmega32u4 PC7
+  #define TONE_PIN2_PIN PINC
   #define TONE_PIN2_PORT PORTC
   #define TONE_PIN2_DDR DDRC
   #define TONE_PIN2 PORTC7
+#else
+  // Arduboy speaker pin 2 = Pro Micro pin 6 = ATmega32u4 PD7
+  #define TONE_PIN2_PIN PIND
+  #define TONE_PIN2_PORT PORTD
+  #define TONE_PIN2_DDR DDRD
+  #define TONE_PIN2 PORTD7
+#endif  
   #define TONE_PIN2_MASK _BV(TONE_PIN2)
 #else
   // DevKit speaker pin 1 = Arduino pin A2 = ATmega32u4 PF5
